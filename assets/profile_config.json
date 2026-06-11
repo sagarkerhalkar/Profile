@@ -1,0 +1,111 @@
+{
+  "name": "Sagar Kerhalkar",
+  "siteTitle": "Sagar Kerhalkar",
+  "headline": "IT Manager | DevOps \u2022 IT Networking \u2022 Automation",
+  "currentCompany": "SPD Eduventure Pvt Ltd (Known as Next Toppers)",
+  "currentRole": "IT Manager",
+  "currentSince": "July 2024",
+  "location": "Bhopal, India",
+  "phone": "8105977226",
+  "email": "sagarhatta@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/sagar-kerhalkar/",
+  "github": "https://github.com/sagarkerhalkar",
+  "summary": "12+ year IT, Cloud and DevOps professional now working as IT Manager at SPD Eduventure Pvt Ltd, known as Next Toppers. Focus areas include DevOps automation, IT networking, infrastructure monitoring, Windows/Linux administration, live-class system reliability and secure operations.",
+  "heroLine": "I build reliable infrastructure, automation and system health monitoring for education technology teams.",
+  "stats": [
+    {
+      "value": "12+",
+      "label": "Years IT / Cloud / DevOps"
+    },
+    {
+      "value": "99.98%",
+      "label": "Visibility target"
+    },
+    {
+      "value": "5 sec",
+      "label": "Live heartbeat mode"
+    },
+    {
+      "value": "4\u00d7",
+      "label": "Employee of Year awards"
+    }
+  ],
+  "skills": [
+    "IT Infrastructure Leadership",
+    "DevOps Automation",
+    "IT Networking",
+    "Windows Server",
+    "Linux Administration",
+    "PowerShell",
+    "Bash / Shell",
+    "Python Automation",
+    "AWS",
+    "GCP",
+    "Azure",
+    "Docker",
+    "Kubernetes",
+    "Jenkins",
+    "GitHub",
+    "Ansible",
+    "Terraform",
+    "Apache / Nginx",
+    "MySQL",
+    "MongoDB",
+    "Grafana",
+    "Prometheus",
+    "VLAN / VPN",
+    "Asset Inventory",
+    "Incident Management",
+    "SLA / CSAT Management",
+    "Security Operations",
+    "Live Class Infrastructure"
+  ],
+  "experience": [
+    {
+      "period": "July 2024 \u2013 Current",
+      "title": "IT Manager",
+      "company": "SPD Eduventure Pvt Ltd (Known as Next Toppers)",
+      "location": "India",
+      "details": "Leading IT operations, DevOps work, IT networking, automation, monitoring, infrastructure reliability and internal system health improvement for education technology operations."
+    },
+    {
+      "period": "December 2017 \u2013 27 July 2024",
+      "title": "Manager - Technical Services",
+      "company": "Tata ClassEdge",
+      "location": "Bhopal, India",
+      "details": "Managed technical services, large-scale deployments, installation quality, vendor coordination, ticket/process compliance, SLAs, incident management, customer operations and cloud/DevOps tooling."
+    },
+    {
+      "period": "August 2015 \u2013 December 2017",
+      "title": "Senior Technical Consultant",
+      "company": "Tata ClassEdge",
+      "location": "Bengaluru, India",
+      "details": "Worked with AWS, Jenkins, Kubernetes, Docker, Ansible, Linux, scripting, Jira, Visual Studio, Spyder and Python."
+    },
+    {
+      "period": "February 2014 \u2013 August 2015",
+      "title": "Academic Consultant",
+      "company": "Tata ClassEdge",
+      "location": "Bhopal, India",
+      "details": "Supported education technology usage, AWS-backed web/database work, faculty/staff training, RDS/IAM/VCS, Grafana/Prometheus reviews and content/server upgrades."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Sagar Kerhalkar System Health Monitor Tool",
+      "slug": "systemhealthmonitor",
+      "summary": "Real-time Windows + Ubuntu fleet health, ISP health, USB/peripheral tracking, software inventory, day history export, notifications, and admin-to-client messages.",
+      "url": "/sagarkerhalkar/systemhealthmonitor",
+      "tags": [
+        "Python",
+        "Windows",
+        "Ubuntu",
+        "Monitoring",
+        "Automation",
+        "DevOps"
+      ]
+    }
+  ],
+  "cvPdf": "/assets/Sagar_Kerhalkar_Resume.pdf",
+  "updatedAt": "2026-06-11"
+}

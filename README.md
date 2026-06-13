@@ -1640,3 +1640,243 @@ robocopy D:\Profile "D:\Profile_FULL_BACKUP_$Stamp" /E /XD ".git" "node_modules"
 [ ] Old production deployment retained for rollback
 ```
 
+---
+
+<!-- CLOUDFLARE_KV_ADMIN_SETUP_START -->
+
+## Cloudflare Workers KV and Production Admin Setup
+
+This section applies to:
+
+```text
+Cloudflare Pages project: sagar-profile-pages
+GitHub branch: portfolio-v7-international
+Production domain: https://sagarkerhalkar.com
+Local repository: D:\Profile
+```
+
+### A. Create the KV namespace from the Cloudflare dashboard
+
+1. Open **Workers KV**.
+2. Click **+ Create** in the top-right corner.
+3. Enter:
+
+```text
+sagar-profile-kv
+```
+
+4. Click **Create**.
+
+### B. Bind KV to the Pages project
+
+Open:
+
+```text
+Workers & Pages
+â†’ sagar-profile-pages
+â†’ Settings
+â†’ Bindings
+â†’ Add binding
+â†’ KV namespace
+```
+
+Set:
+
+```text
+Variable name: PROFILE_KV
+KV namespace: sagar-profile-kv
+```
+
+Save the binding for **Production**. Add it to **Preview** too when preview deployments need the admin editor.
+
+The variable name must be exactly `PROFILE_KV`, because the Pages Functions use `env.PROFILE_KV`.
+
+### C. CLI alternative for creating KV
+
+When the dashboard is confusing, run:
+
+```powershell
+cd D:\Profile
+npx.cmd wrangler kv namespace create PROFILE_KV
+```
+
+Wrangler prints the namespace ID. Copy that ID.
+
+Create or update `wrangler.toml`:
+
+```toml
+name = "sagar-profile-pages"
+pages_build_output_dir = "."
+compatibility_date = "2026-06-14"
+
+[[kv_namespaces]]
+binding = "PROFILE_KV"
+id = "PASTE_THE_NAMESPACE_ID_HERE"
+```
+
+Do not leave the placeholder ID.
+
+Verify namespaces:
+
+```powershell
+npx.cmd wrangler kv namespace list
+```
+
+Deploy after adding the binding:
+
+```powershell
+npx.cmd wrangler pages deploy . --project-name=sagar-profile-pages --branch=portfolio-v7-international --commit-dirty=true
+```
+
+### D. Generate production admin values
+
+Choose a strong private password. Do not send it in chat and do not commit it.
+
+```powershell
+cd D:\Profile
+node .\tools\generate-admin-secrets.mjs "YOUR_PRIVATE_PASSWORD"
+```
+
+The command prints:
+
+```text
+ADMIN_USERNAME=sagar
+AUTH_SALT=generated-value
+SESSION_SECRET=generated-value
+ADMIN_PASSWORD_HASH=generated-value
+```
+
+Keep the PowerShell window open while copying the values.
+
+### E. Add Cloudflare variables and encrypted secrets
+
+Open:
+
+```text
+Workers & Pages
+â†’ sagar-profile-pages
+â†’ Settings
+â†’ Variables and Secrets
+â†’ Add
+```
+
+Add the normal variable:
+
+```text
+ADMIN_USERNAME = sagar
+```
+
+Add these as encrypted secrets:
+
+```text
+AUTH_SALT
+SESSION_SECRET
+ADMIN_PASSWORD_HASH
+```
+
+Paste only each generated value. Do not include the variable name or `=` sign inside the value box.
+
+### F. Redeploy
+
+```powershell
+cd D:\Profile
+npx.cmd wrangler pages deploy . --project-name=sagar-profile-pages --branch=portfolio-v7-international --commit-dirty=true
+```
+
+### G. Test the public API
+
+```powershell
+Invoke-WebRequest "https://sagarkerhalkar.com/api/profile" -UseBasicParsing
+```
+
+Expected result:
+
+```text
+StatusCode : 200
+```
+
+### H. Test production admin login
+
+Open:
+
+```text
+https://sagarkerhalkar.com/admin/
+```
+
+Use:
+
+```text
+Username: sagar
+Password: the private password used when generating the hash
+```
+
+Change one small field, save it, refresh, and confirm the change remains.
+
+### I. Error meanings
+
+```text
+503 Admin auth not configured
+```
+
+One or more of these values is missing:
+
+```text
+ADMIN_USERNAME
+AUTH_SALT
+SESSION_SECRET
+ADMIN_PASSWORD_HASH
+```
+
+```text
+401 Unauthorized
+```
+
+The username or password is incorrect.
+
+```text
+Login works but saved changes disappear
+```
+
+`PROFILE_KV` is missing, has the wrong binding name, or the site was not redeployed after binding.
+
+### J. PowerShell npm/npx execution-policy issue
+
+If PowerShell blocks `npm.ps1` or `npx.ps1`, use the Windows command wrappers:
+
+```powershell
+npm.cmd --version
+npx.cmd wrangler --version
+```
+
+### K. Production smoke test
+
+```powershell
+$Urls = @(
+    "https://sagarkerhalkar.com/",
+    "https://sagarkerhalkar.com/cv/",
+    "https://sagarkerhalkar.com/admin/",
+    "https://sagarkerhalkar.com/projects/systemhealthmonitor/",
+    "https://sagarkerhalkar.com/api/profile",
+    "https://sagarkerhalkar.com/assets/Sagar_Kerhalkar_IT_Infrastructure_DevOps_Leader_CV.pdf"
+)
+
+foreach ($Url in $Urls) {
+    try {
+        $Response = Invoke-WebRequest $Url -UseBasicParsing -TimeoutSec 30
+        Write-Host "PASS $($Response.StatusCode) $Url" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "FAIL $Url - $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+```
+
+### L. Security rules
+
+- Never commit production passwords.
+- Never commit `AUTH_SALT`, `SESSION_SECRET`, or `ADMIN_PASSWORD_HASH`.
+- Local password `Profile@2026` is only for local testing.
+- Production password is the private password used in the generator command.
+- Always redeploy after changing bindings or secrets.
+
+<!-- CLOUDFLARE_KV_ADMIN_SETUP_END -->

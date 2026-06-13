@@ -1,0 +1,80 @@
+name: Test and Deploy Portfolio to Cloudflare Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - "README_A_TO_Z.md"
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install test dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Install all browser engines
+        run: python -m playwright install --with-deps chromium firefox webkit
+
+      - name: Syntax checks
+        run: |
+          python -m py_compile scripts/generate_cv_pdf.py tests/validate.py tests/browser_matrix.py tests/http_smoke.py
+          node --check assets/site.js
+          node --check assets/cv.js
+          node --check assets/admin.js
+          node --check functions/api/profile.js
+          node --check functions/api/admin/login.js
+          node --check functions/api/admin/logout.js
+          node --check functions/api/admin/profile.js
+          node --check functions/lib/auth.js
+
+      - name: Generate and verify A4 CV
+        run: |
+          python scripts/generate_cv_pdf.py
+          python tests/validate.py
+
+      - name: HTTP and responsive browser tests
+        run: |
+          python tests/http_smoke.py
+          python tests/browser_matrix.py
+          python tests/validate.py
+
+      - name: Build release directory
+        run: |
+          mkdir -p release
+          cp -r index.html 404.html assets cv admin projects functions _headers robots.txt sitemap.xml .nojekyll release/
+          find release -type d -name __pycache__ -prune -exec rm -rf {} +
+          find release -type f -name '*.pyc' -delete
+
+      - name: Deploy only after every test passes
+        run: npx wrangler@latest pages deploy release --project-name="$CLOUDFLARE_PAGES_PROJECT" --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PAGES_PROJECT: ${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-v7-deployment-evidence
+          path: |
+            test_screenshots/
+            test-results.json
+            assets/Sagar_Kerhalkar_IT_Infrastructure_DevOps_Leader_CV.pdf

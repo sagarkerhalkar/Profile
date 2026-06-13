@@ -1,0 +1,10 @@
+name = "sagar-global-profile"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "."
+
+# Bind a KV namespace named PROFILE_KV in Cloudflare Pages settings.
+# Add encrypted environment variables:
+# ADMIN_USERNAME
+# ADMIN_PASSWORD_HASH
+# AUTH_SALT
+# SESSION_SECRET

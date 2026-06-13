@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+release/
+test-results.json
+.dev.vars
+.env
+wrangler.toml
+.DS_Store

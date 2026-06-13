@@ -1,0 +1,4 @@
+import crypto from 'node:crypto';
+const password=process.argv[2];if(!password){console.error('Usage: node tools/generate-admin-secrets.mjs "YourStrongPassword"');process.exit(1)}
+const salt=crypto.randomBytes(24).toString('base64url');const secret=crypto.randomBytes(48).toString('base64url');const hash=crypto.createHash('sha256').update(`${salt}:${password}`).digest('base64url');
+console.log('\nSet these Cloudflare Pages variables/secrets:\n');console.log('ADMIN_USERNAME=sagar');console.log('AUTH_SALT='+salt);console.log('SESSION_SECRET='+secret);console.log('ADMIN_PASSWORD_HASH='+hash);console.log('\nDo not commit these values to Git.\n');

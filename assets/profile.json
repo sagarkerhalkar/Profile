@@ -1,0 +1,353 @@
+{
+  "name": "Sagar Kerhalkar",
+  "headline": "IT Infrastructure & DevOps Leader",
+  "heroKicker": "Infrastructure · DevOps · Automation · Observability",
+  "heroTitle": "Building reliable infrastructure for always-on digital operations.",
+  "microStatement": "Engineering reliable digital operations with measurable outcomes.",
+  "subheadline": "I lead resilient Windows, Linux, cloud and network platforms—combining automation, observability, CI/CD and operational ownership to reduce risk and improve service delivery.",
+  "currentRole": "IT Manager",
+  "currentCompany": "SPD Eduventure Pvt Ltd (Next Toppers)",
+  "location": "Bhopal, India",
+  "availability": "Open to global infrastructure, DevOps and platform leadership opportunities",
+  "email": "sagarhatta@gmail.com",
+  "phone": "+91 81059 77226",
+  "website": "https://sagarkerhalkar.com",
+  "monitorWebsite": "https://monitor.sagarkerhalkar.com",
+  "linkedin": "https://www.linkedin.com/in/sagar-kerhalkar/",
+  "github": "https://github.com/sagarkerhalkar",
+  "profileImage": "assets/sagar-portrait-v7.webp",
+  "avatarImage": "assets/sagar-avatar-v7.webp",
+  "birthDate": "",
+  "languages": [
+    {
+      "name": "English",
+      "level": "Professional working proficiency"
+    },
+    {
+      "name": "Hindi",
+      "level": "Native or bilingual proficiency"
+    },
+    {
+      "name": "Marathi",
+      "level": "Professional working proficiency"
+    }
+  ],
+  "education": [
+    {
+      "qualification": "B.E. in Electronics and Communication",
+      "institution": "Nagpur University",
+      "period": "Bachelor of Engineering",
+      "details": "Electronics, communication systems and engineering fundamentals."
+    },
+    {
+      "qualification": "CCNA, Systems, Networking and LAN/WAN Management",
+      "institution": "Sis Tech Pvt Ltd",
+      "period": "2015 – 2016",
+      "details": "Professional infrastructure and networking programme · Grade A."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ITIL® Foundation Certificate in IT Service Management",
+      "issuer": "PeopleCert / AXELOS",
+      "issued": "10 May 2021",
+      "expires": "No expiry",
+      "credentialId": "GR671268627SK",
+      "details": "ITIL 4 Edition · Candidate number 9980069298096632",
+      "category": "Service Management"
+    },
+    {
+      "name": "Multi-Cloud & Top DevOps Tools & Implementations",
+      "issuer": "CloudDevOpsHub",
+      "issued": "November 2024",
+      "expires": "November 2027",
+      "credentialId": "B36CDH",
+      "details": "Multi-cloud architecture and modern DevOps tooling.",
+      "category": "Cloud & DevOps"
+    },
+    {
+      "name": "AI for Techies",
+      "issuer": "United Latino Students Association",
+      "issued": "February 2025",
+      "expires": "",
+      "credentialId": "30",
+      "details": "Applied AI concepts for technology professionals.",
+      "category": "Artificial Intelligence"
+    },
+    {
+      "name": "Resilience Strategies for Optimal Performance",
+      "issuer": "LinkedIn Learning",
+      "issued": "13 June 2023",
+      "expires": "",
+      "credentialId": "AUFGJhHnWW3LbDPTkgC3jfr4DRiv",
+      "details": "Course duration: 58 minutes.",
+      "category": "Leadership & Resilience"
+    },
+    {
+      "name": "Yoga Certification",
+      "issuer": "Gayatri Pariwar, Shantikunj, Haridwar",
+      "issued": "June 2015",
+      "expires": "",
+      "credentialId": "",
+      "details": "Additional wellness and personal development credential.",
+      "category": "Wellness"
+    }
+  ],
+  "summary": "IT infrastructure and DevOps leader with 12+ years of experience across education technology, technical service delivery, cloud operations, automation, Windows and Linux administration, networking, observability and reliability improvement. I combine hands-on engineering with operational leadership to make systems easier to run, safer to change and clearer to measure.",
+  "roles": [
+    "IT Infrastructure & DevOps Leader",
+    "Cloud & Platform Operations Leader",
+    "Automation & Observability Practitioner",
+    "Technical Service Delivery Manager"
+  ],
+  "stats": [
+    {
+      "value": "12+",
+      "label": "Years in IT operations"
+    },
+    {
+      "value": "4",
+      "label": "Featured engineering projects"
+    },
+    {
+      "value": "5",
+      "label": "Professional credentials"
+    },
+    {
+      "value": "3",
+      "label": "Working languages"
+    }
+  ],
+  "platformSummary": "Windows • Linux • Unix • Cloud • H/W Networking",
+  "coreToolSummary": "Docker • GitHub • CI/CD Tools • Monitoring Tools • Linux • PowerShell • Bash • Python • Kubernetes • System Administration • AI-assisted Automation",
+  "toolGroups": [
+    {
+      "title": "Platforms & Tooling",
+      "outcome": "Operate dependable compute, cloud and network platforms across mixed environments.",
+      "tools": [
+        "Windows",
+        "Linux",
+        "Unix",
+        "Cloud",
+        "H/W Networking"
+      ]
+    },
+    {
+      "title": "Core DevOps / Infrastructure Tools",
+      "outcome": "Automate, deliver, monitor and administer production infrastructure.",
+      "tools": [
+        "Docker",
+        "GitHub",
+        "CI/CD Tools",
+        "Monitoring Tools",
+        "Linux",
+        "PowerShell",
+        "Bash",
+        "Python",
+        "Kubernetes",
+        "System Administration",
+        "AI-assisted Automation"
+      ]
+    },
+    {
+      "title": "Cloud & Delivery",
+      "outcome": "Build repeatable cloud and delivery workflows with measurable controls.",
+      "tools": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Cloudflare",
+        "GitHub Actions",
+        "Jenkins"
+      ]
+    },
+    {
+      "title": "Automation & IaC",
+      "outcome": "Reduce manual risk through scripting and infrastructure automation.",
+      "tools": [
+        "PowerShell",
+        "Bash",
+        "Python",
+        "Terraform",
+        "Ansible",
+        "REST APIs"
+      ]
+    },
+    {
+      "title": "Observability & Reliability",
+      "outcome": "Use metrics, logs, monitoring and alerting to improve service reliability.",
+      "tools": [
+        "Monitoring Tools",
+        "Grafana",
+        "Prometheus",
+        "OpenTelemetry",
+        "Logs",
+        "Alerting",
+        "Incident Response"
+      ]
+    },
+    {
+      "title": "AI & Intelligent Automation",
+      "outcome": "Use practical AI assistance to accelerate analysis, documentation and repeatable operational workflows.",
+      "tools": [
+        "AI-assisted Operations",
+        "Generative AI",
+        "Prompt Engineering",
+        "Workflow Automation",
+        "Applied AI"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "period": "Jul 2024 – Present",
+      "title": "IT Manager",
+      "company": "SPD Eduventure Pvt Ltd (Next Toppers)",
+      "location": "India",
+      "details": "Leading IT operations, infrastructure reliability, networking, automation and platform monitoring for education technology delivery.",
+      "highlights": [
+        "Infrastructure and service ownership",
+        "DevOps automation and monitoring",
+        "Windows and Linux fleet operations",
+        "Operational risk and reliability improvement"
+      ]
+    },
+    {
+      "period": "Dec 2017 – Jul 2024",
+      "title": "Manager – Technical Services",
+      "company": "Tata ClassEdge",
+      "location": "Bhopal, India",
+      "details": "Managed technical service delivery, multi-site deployments, vendor coordination, incident management, SLA compliance and customer operations.",
+      "highlights": [
+        "Multi-site technical operations",
+        "Deployment quality and governance",
+        "SLA and incident leadership",
+        "Customer and vendor coordination"
+      ]
+    },
+    {
+      "period": "Aug 2015 – Dec 2017",
+      "title": "Senior Technical Consultant",
+      "company": "Tata ClassEdge",
+      "location": "Bengaluru, India",
+      "details": "Worked across Linux, cloud, automation and DevOps tooling while supporting scalable education technology environments.",
+      "highlights": [
+        "AWS and Linux operations",
+        "Jenkins, Docker and Kubernetes",
+        "Ansible and scripting",
+        "Technical consulting"
+      ]
+    },
+    {
+      "period": "Feb 2014 – Aug 2015",
+      "title": "Academic Consultant",
+      "company": "Tata ClassEdge",
+      "location": "Bhopal, India",
+      "details": "Supported education technology adoption, training, infrastructure upgrades and operational delivery.",
+      "highlights": [
+        "Technology adoption and training",
+        "Platform support",
+        "Cloud-backed operations",
+        "Stakeholder communication"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "System Health Monitor Tool",
+      "type": "Infrastructure Observability",
+      "summary": "Real-time Windows and Ubuntu fleet visibility for CPU, RAM, storage, GPU, network, ISP, software, USB/peripherals, alerts, history and deployment operations.",
+      "tags": [
+        "Python",
+        "PowerShell",
+        "Bash",
+        "Windows",
+        "Ubuntu",
+        "Observability"
+      ],
+      "metric": "Cross-platform fleet monitoring",
+      "github": "https://github.com/sagarkerhalkar/Systeam_Monitor_Tool",
+      "live": "https://monitor.sagarkerhalkar.com",
+      "url": "projects/systemhealthmonitor/",
+      "visual": "telemetry"
+    },
+    {
+      "name": "AskYourDoubt",
+      "type": "Education Technology Platform",
+      "summary": "Teacher and student live doubt workflow with isolated sessions, duplicate-doubt voting, admin controls and operational dashboards.",
+      "tags": [
+        "Python",
+        "Flask",
+        "Realtime UX",
+        "Sessions",
+        "Education Tech"
+      ],
+      "metric": "Classroom engagement workflow",
+      "github": "https://github.com/sagarkerhalkar/AskYourDoubt",
+      "url": "https://github.com/sagarkerhalkar/AskYourDoubt",
+      "visual": "workflow"
+    },
+    {
+      "name": "Play with Document",
+      "type": "Document Automation Studio",
+      "summary": "Multi-user document utility for conversion, compression, splitting, merging, image processing and media workflows.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "PDF",
+        "Automation",
+        "Multi-user"
+      ],
+      "metric": "Document and media workflows",
+      "github": "https://github.com/sagarkerhalkar/Play-with-Document",
+      "url": "https://github.com/sagarkerhalkar/Play-with-Document",
+      "visual": "documents"
+    },
+    {
+      "name": "90 Days of DevOps",
+      "type": "DevOps Practice Repository",
+      "summary": "Structured hands-on learning across Linux, networking, containers, CI/CD, cloud, infrastructure as code, Kubernetes, security and observability.",
+      "tags": [
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD",
+        "Cloud"
+      ],
+      "metric": "Production-oriented DevOps practice",
+      "github": "https://github.com/sagarkerhalkar/90DaysOfDevOps",
+      "url": "https://github.com/sagarkerhalkar/90DaysOfDevOps",
+      "visual": "pipeline"
+    }
+  ],
+  "principles": [
+    {
+      "title": "Reliable by design",
+      "text": "Build for clear ownership, tested rollback, recoverability and honest operational data."
+    },
+    {
+      "title": "Automate repeatable work",
+      "text": "Use scripts, pipelines and infrastructure patterns to remove avoidable manual risk."
+    },
+    {
+      "title": "Observe the complete system",
+      "text": "Connect infrastructure, network, application and user-impact signals before acting."
+    },
+    {
+      "title": "Lead with evidence",
+      "text": "Use metrics, logs, tests and documented outcomes to improve systems and align teams."
+    }
+  ],
+  "heroTitleLine1": "Building reliable infrastructure",
+  "heroTitleLine2": "for always-on digital operations.",
+  "orbitLabels": [
+    "Automation",
+    "Observability",
+    "Cloud",
+    "CI/CD",
+    "AI",
+    "DevOps"
+  ],
+  "portfolioVersion": "7.0.0"
+}

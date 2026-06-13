@@ -1,0 +1,1 @@
+export async function onRequestGet({request,env}){const v=await env.PROFILE_KV?.get('profile','json');if(v)return new Response(JSON.stringify(v),{headers:{'content-type':'application/json','cache-control':'no-store'}});const u=new URL('/assets/profile.json',request.url);return env.ASSETS.fetch(new Request(u,request))}

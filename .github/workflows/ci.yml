@@ -1,0 +1,83 @@
+name: Portfolio V7 CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Python test dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Install Chromium, Firefox and WebKit
+        run: python -m playwright install --with-deps chromium firefox webkit
+
+      - name: Check Python syntax
+        run: python -m py_compile scripts/generate_cv_pdf.py tests/validate.py tests/browser_matrix.py tests/http_smoke.py
+
+      - name: Check JavaScript and Functions syntax
+        run: |
+          node --check assets/site.js
+          node --check assets/cv.js
+          node --check assets/admin.js
+          node --check functions/api/profile.js
+          node --check functions/api/admin/login.js
+          node --check functions/api/admin/logout.js
+          node --check functions/api/admin/profile.js
+          node --check functions/lib/auth.js
+          node --check tools/generate-admin-secrets.mjs
+
+      - name: Generate two-page A4 CV
+        run: python scripts/generate_cv_pdf.py
+
+      - name: Validate site, content and PDF
+        run: python tests/validate.py
+
+      - name: Test local HTTP delivery
+        run: python tests/http_smoke.py
+
+      - name: Test responsive browser matrix
+        run: python tests/browser_matrix.py
+
+      - name: Final validation
+        run: python tests/validate.py
+
+
+      - name: Build Docker production image
+        run: docker build -t sagar-global-portfolio:ci .
+
+      - name: Smoke-test Docker container
+        run: |
+          docker run -d --name portfolio-ci -p 8089:80 sagar-global-portfolio:ci
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8089/healthz && break || sleep 1; done
+          curl -fsS http://127.0.0.1:8089/ > /dev/null
+          curl -fsS http://127.0.0.1:8089/cv/ > /dev/null
+          curl -fsS http://127.0.0.1:8089/assets/Sagar_Kerhalkar_IT_Infrastructure_DevOps_Leader_CV.pdf > /dev/null
+          docker rm -f portfolio-ci
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-v7-test-artifacts
+          path: |
+            test_screenshots/
+            test-results.json
+            assets/Sagar_Kerhalkar_IT_Infrastructure_DevOps_Leader_CV.pdf

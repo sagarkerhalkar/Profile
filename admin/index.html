@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Secure Profile Editor</title><link rel="stylesheet" href="../assets/admin.css"></head>
+<body>
+<main class="admin-shell">
+  <section class="login-card" id="loginCard">
+    <div class="admin-brand"><span>SK</span><div><b>Secure Profile Editor</b><small>Owner access only</small></div></div>
+    <h1>Sign in</h1><p id="loginNote">Use your private profile editor credentials.</p>
+    <form id="loginForm"><label>Username<input id="username" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button type="submit">Sign in securely</button><p class="error" id="loginError"></p></form>
+  </section>
+  <section class="editor" id="editor" hidden>
+    <header><div><h1>Secure portfolio control panel</h1><p>Edit identity, hero, tools, education, experience, certifications, projects and contact information. Changes are private until you save.</p></div><div class="header-buttons"><button class="secondary" id="previewBtn">Open preview</button><button class="secondary" id="logoutBtn">Logout</button></div></header>
+    <div class="editor-grid"><nav id="editorNav"></nav><div class="form-panel"><form id="profileForm"></form><div class="save-row"><button class="secondary" id="exportBtn" type="button">Export JSON</button><button id="saveBtn" type="button">Save profile</button><span id="saveStatus"></span></div></div></div>
+  </section>
+</main>
+<script src="../assets/admin.js"></script>
+</body></html>
